@@ -16,7 +16,7 @@ if($mySafe->isLocked() == false) {
     $mySafe->lock();
 }
 else if($mySafe->isLocked() == true) {
-    echo "Error. Wrong PIN number. <br /> Safe still locked. <br /><br />";
+    echo "Error. Wrong PIN number. <br /> Safe still locked. <br /><hr>";
     /*?>
     <iframe src="index.php" style="border:none;"></iframe> <?php if($mySafe->isLocked() == true) {
     }

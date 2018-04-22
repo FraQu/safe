@@ -1,26 +1,21 @@
 <?php
-require 'MySafe.php';
+require 'Lock.php';
 
-$lock = new Lock();
-$mySafe = new MySafe();
 $safe = new Safe();
+$lock = new Lock();
 
-$safeModel = $mySafe->model;
-$producer = $mySafe->getProducer();
+$safeModel = $safe->model;
+$producer = $safe->getProducer();
 
-$mySafe->unlock($_POST['pin']);
-if($mySafe->isLocked() == false) {
+$lock->unlock($_POST['pin']);
+if($lock->isLocked() == false) {
     echo "Safe unlocked. <br />";
     echo "Welcome to $safeModel by $producer <br />";
-    echo $mySafe->getContent();
-    $mySafe->lock();
+    echo $lock->getContent();
+    $lock->lock();
 }
-else if($mySafe->isLocked() == true) {
+else if($lock->isLocked() == true) {
     echo "Error. Wrong PIN number. <br /> Safe still locked. <br /><hr>";
-    /*?>
-    <iframe src="index.php" style="border:none;"></iframe> <?php if($mySafe->isLocked() == true) {
-    }
-    */
     include 'index.php';
 }
 

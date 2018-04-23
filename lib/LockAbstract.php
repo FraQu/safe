@@ -1,5 +1,6 @@
 <?php
 require_once 'Safe.php';
+
 abstract class LockAbstract extends Safe {
     protected $pin = '1234';
     protected $locked = true;
@@ -25,6 +26,7 @@ abstract class LockAbstract extends Safe {
             return false;
         }
         $this->content = $content;
+        return false;
     }
 
     public function lock() {

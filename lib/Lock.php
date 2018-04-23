@@ -1,6 +1,5 @@
 <?php
 require_once 'LockInterface.php';
-require_once 'Safe.php';
 
 class Lock implements LockInterface {
     protected $locked = true;

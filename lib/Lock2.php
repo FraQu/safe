@@ -1,10 +1,10 @@
 <?php
 require_once 'LockInterface.php';
 require_once 'Safe.php';
-class Lock extends Safe implements LockInterface {
-    protected $pin = '1234';
 
-//    private $lock;
+class Lock2 extends Safe implements LockInterface {
+    protected $pin = 'haslo';
+
 
     public function isLocked() {
         return $this->locked;
@@ -44,8 +44,4 @@ class Lock extends Safe implements LockInterface {
     public function setLocked($locked) {
         $this->locked = $locked;
     }
-//
-//    public function __construct($lock) {
-//        $this->lock = $lock;
-//    }
 }

@@ -1,8 +1,9 @@
 <?php
-require_once 'SafeAbstract.php';
+require_once 'SafeInterface.php';
 
-class Safe extends SafeAbstract {
-    protected $content = 'This is secret. This safe has a bad design.';
+class Safe implements SafeInterface {
+    public $model = 'OOP Safe I';
+    protected $producer = 'AK Solutions';
 
 
     public function getProducer() {

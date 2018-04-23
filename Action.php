@@ -20,7 +20,7 @@ if($lock->isLocked() == false || $lock2->isLocked() == false) {
     $lock->setLocked(true);
     $lock2->setLocked(true);
 }
-else if ($lock->isLocked() == true| $lock2->isLocked() == true) {
+else if ($lock->isLocked() == true || $lock2->isLocked() == true) {
     echo "Error. Wrong PIN number. <br /> Safe still locked. <br /><hr />";
     require_once 'index.php';
 }

@@ -1,8 +1,9 @@
 <?php
 require_once 'LockInterface.php';
 require_once 'Safe.php';
+
 class Lock extends Safe implements LockInterface {
-    protected $pin = '1234';
+    protected $pin = "1234";
 
 
     public function isLocked() {

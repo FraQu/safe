@@ -17,6 +17,19 @@ if($lock->isLocked() == false || $lock2->isLocked() == false) {
     echo "Welcome to $safeModel by $producer <br /><hr />";
     echo $lock->getContent();
     echo $lock2->getContent();
+
+    //Test: Safe unlocked by which Lock
+    if($lock->isLocked() == false) {
+        echo "<br />Safe unlocked by Lock: yes";
+    } else {
+        echo "<br />Safe unlocked by Lock: no";
+    }
+    if($lock2->isLocked() == false) {
+        echo "<br />Safe unlocked by Lock: yes";
+    } else {
+        echo "<br />Safe unlocked by Lock: no";
+    }
+
     $lock->setLocked(true);
     $lock2->setLocked(true);
 }

@@ -1,7 +1,7 @@
 <?php
 interface LockInterface {
-    function getPin();
-    function setPin($pin);
-    function setLocked($pin);
-    function unlock($pin);
+    public function getPin();
+    public function setPin($pin);
+    public function setLocked($pin);
+    public function setUnlocked($pin);
 }

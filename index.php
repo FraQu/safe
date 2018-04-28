@@ -6,8 +6,8 @@
 </head>
 <body>
 <form action="Action.php" method="POST" >
-    Type PIN to unlock Safe: <br />
-    <input type="password" name="pin" id="pin" title="pin" >
+    Type PIN or PASSWORD to unlock Safe: <br />
+    <input type="password" name="pin" id="pin" title="pin/password" size="32" >
     <input type="submit" value="OK" id="ok" title="ok">
 </form>
 </body>

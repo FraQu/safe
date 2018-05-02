@@ -42,3 +42,4 @@ if ($lock->isLocked() == false) {
     echo "Error. Wrong PIN number or PASSWORD. <br /> Safe still locked. <br /><hr />";
     require_once 'index.php';
 }
+//test

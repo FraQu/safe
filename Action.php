@@ -40,5 +40,5 @@ if ($lock->isLocked() == false) {
     $alarm->setAlarmOn();
 //    var_dump($alarm->getAlarmState());
     echo "Error. Wrong PIN number or PASSWORD. <br /> Safe still locked. <br /><hr />";
-    require_once 'index.php';
+    include_once 'index.php';
 }

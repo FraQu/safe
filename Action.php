@@ -12,33 +12,33 @@ $safeModel = $safe->model;
 $producer = $safe->getProducer();
 
 
-echo "Check alarm on or off before checking the PIN/PASS <br />" . var_dump($alarm->getAlarmState());
+//echo "Check alarm on or off before checking the PIN/PASS <br />" . var_dump($alarm->getAlarmState());
 
 $lock->setUnlocked($_POST['pin']);
 $lock2->setUnlocked($_POST['pin']);
 
 if ($lock->isLocked() == false) {
     $alarm->setAlarmOff();
-    var_dump($alarm->getAlarmState());
+//    var_dump($alarm->getAlarmState());
     echo "Safe unlocked. <br />";
     echo "Welcome to $safeModel by $producer <br /><hr />";
     echo $lock->getContent();
     $lock->setLocked(true);
 } else if ($lock2->isLocked() == false) {
     $alarm->setAlarmOff();
-    var_dump($alarm->getAlarmState());
+//    var_dump($alarm->getAlarmState());
     echo "Safe unlocked. <br />";
     echo "Welcome to $safeModel by $producer <br /><hr />";
     echo $lock2->getContent();
     $lock2->setLocked(true);
 } else if ($lock->isLocked() == true) {
     $alarm->setAlarmOn();
-    var_dump($alarm->getAlarmState());
+//    var_dump($alarm->getAlarmState());
     echo "Error. Wrong PIN number or PASSWORD. <br /> Safe still locked. <br /><hr />";
     require_once 'index.php';
 } else if ($lock2->isLocked() == true) {
     $alarm->setAlarmOn();
-    var_dump($alarm->getAlarmState());
+//    var_dump($alarm->getAlarmState());
     echo "Error. Wrong PIN number or PASSWORD. <br /> Safe still locked. <br /><hr />";
     require_once 'index.php';
 }

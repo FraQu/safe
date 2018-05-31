@@ -1,5 +1,5 @@
 <?php
 interface SafeInterface {
-    function getProducer();
-    function setProducer($producer);
+    public function getProducer();
+    public function setProducer($producer);
 }

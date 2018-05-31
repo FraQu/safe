@@ -1,19 +1,25 @@
 <?php
-require_once 'SafeInterface.php';
+class Safe extends SafeAbstract {
+    protected $lock;
 
-class Safe implements SafeInterface {
-    protected $locked = true;
-    protected $content = 'This is secret. This safe has a bad design.';
-
-    public $producer = 'AK Solutions';
-    public $model = 'OOP Safe I';
-
-
-    public function getProducer() {
-        return $this->producer;
+    public function __construct(LockAbstract $locked) {
+        $this->lock = $locked;
+        //SafeAbstract's constructor
+        parent::__construct();
     }
 
-    public function setProducer($producer) {
-        $this->producer = $producer;
+    public function getContent() {
+        if($this->lock->getLockState() == true) {
+            return false;
+        }
+        return $this->content;
+    }
+
+    public function setContent($content) {
+        if($this->lock->getLockState() == true) {
+            return false;
+        }
+        $this->content = $content;
+        return true;
     }
 }

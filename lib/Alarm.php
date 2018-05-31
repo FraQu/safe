@@ -1,23 +1,16 @@
 <?php
-require_once 'AlarmInterface.php';
-require_once 'Safe.php';
+require_once 'AlarmAbstract.php';
 
-class Alarm extends Safe implements AlarmInterface {
-    public $alarm = true;
-
-    public function __construct($alarm){
-        $this->alarm = $alarm;
+class Alarm extends AlarmAbstract {
+    public static function setAlarmOn() {
+        self::$alarm = true;
     }
 
-    public function setAlarmOn() {
-        $this->alarm = true;
+    public static function setAlarmOff() {
+        self::$alarm = false;
     }
 
-    public function setAlarmOff() {
-        $this->alarm = false;
-    }
-
-    public function getAlarmState() {
-        return $this->alarm;
+    public static function getAlarmState() {
+        return self::$alarm;
     }
 }

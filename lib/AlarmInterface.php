@@ -1,6 +1,6 @@
 <?php
 interface AlarmInterface {
-    public function setAlarmOn();
-    public function setAlarmOff();
-    public function getAlarmState();
+    static public function setAlarmOn();
+    static public function setAlarmOff();
+    static public function getAlarmState();
 }

@@ -1,7 +1,18 @@
 <?php
-spl_autoload_register(function ($class_name) {
-    include 'lib/' . $class_name . '.php';
-});
+require_once 'lib\Alarm\Alarm.php';
+require_once 'lib\Alarm\AlarmAbstract.php';
+require_once 'lib\Alarm\AlarmInterface.php';
+require_once 'lib\Lock\LockInterface.php';
+require_once 'lib\Lock\LockAbstract.php';
+require_once 'lib\Lock\PinLock.php';
+require_once 'lib\Lock\PasswordLock.php';
+require_once 'lib\Safe\SafeInterface.php';
+require_once 'lib\Safe\SafeAbstract.php';
+require_once 'lib\Safe\Safe.php';
+
+//spl_autoload_register(function ($class_name) {
+//    include 'lib/' . $class_name . '.php';
+//});
 
 $pinLock = new PinLock('1234');
 $passLock = new PasswordLock('qwerty');
@@ -31,4 +42,3 @@ if (($pinLock->getLockState() == false) || ($passLock->getLockState() == false))
     echo "Error. Wrong PIN number or PASSWORD. <br /> Safe still locked. <br /><hr />";
     require_once 'index.php';
 }
-//test
